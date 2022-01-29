@@ -1,4 +1,4 @@
 目前用到了:
 1.Vuex
 2.Vue-Router 
-3.less和第五版本的less-loader 需要输入指令 mpn install less less-loader@5
+3.less和第五版本的less-loader 需要输入指令 npm install less less-loader@5
