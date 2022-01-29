@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class = "header">
+        <div class = "header" v-if = "this.$route.meta.isheadershow">
             <div class = "logo"><span style = "margin:auto;color:red">LOGO</span></div>
             <div class = "headermenu">
                 <div class = "headfont">首页</div>
@@ -31,10 +31,12 @@
                 
             };
         },
+
         methods : {
             clicka()
             {
-                console.log(123);
+                let lalala = 123;
+                // console.log(123);
             }
         }
     }

@@ -17,12 +17,24 @@ export default new VueRouter({
     mode: 'history',
     routes:[
         {
-            path: '/',
+            path: '*',
             redirect: '/home'
         },
         {
             path: '/home',
-            component: () => import('@/views/Home')
+            component: () => import('@/views/Home'),
+            meta : {
+                isheadershow : true,
+            }
+        },
+        {
+            path : "/login",
+            component : () => {
+                return import ("@/components/login");
+            },
+            meta : {
+                isheadershow : false,
+            }
         }
     ]
 })
