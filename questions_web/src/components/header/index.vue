@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class = "header" v-if = "this.$route.meta.isheadershow">
-            <div class = "logo"><span style = "margin:auto;color:red">LOGO</span></div>
+            <div class = "logo" v-show = "showLogo"><span style = "margin:auto;color:red">LOGO</span></div>
             <div class = "headermenu">
                 <div class = "headfont">首页</div>
                 <div class = "headfont">问答</div>
@@ -28,10 +28,27 @@
         data()
         {
             return {
-                
+                showLogo : true,
             };
         },
-
+        mounted()
+        {
+            // const that = this;
+            // window.onresize = function()
+            // {
+            //     console.log(22);
+            //     const width = document.documentElement.clientWidth;
+            //     if(800 > width)
+            //     {
+            //         that.showLogo = false;
+            //     }
+            //     else
+            //     {
+                    
+            //         that.showLogo = true;
+            //     }
+            // }
+        },
         methods : {
             clicka()
             {
@@ -45,7 +62,7 @@
 <style scoped>
     .header
     {
-        width : 1200px;
+        width : 100vw;
         height : 100px;
         display : flex;
         justify-content : space-between;
@@ -72,13 +89,16 @@
     .logo
     {
         display : flex;
-        margin-top : 15px;
+        margin : auto 25px;
+        /* margin-top : 15px;
         margin-left : 25px;
-        margin-right : 25px;
+        margin-right : 25px; */
         opacity : 0.3;
         background-color : black;
         width : 75px;
         height : 65px;
+        flex-shrink : 0;
+        flex-grow : 0;
     }
     .headrightsize
     {
@@ -86,8 +106,8 @@
         height : 45px;
         width : 400px;
         /* margin-top : 30px; */
-        margin : auto;
-        justify-content : flex-start;
+        margin : auto 20px auto 50px;
+        justify-content : flex-end;
         /* border : purple 1px solid; */
     }
     .userbuttons
@@ -137,5 +157,63 @@
         margin-top:auto;
         margin-bottom: auto;
         /* vertical-align:middle; */
+    }
+
+    @media screen and (max-width : 1200px) and (min-width : 1000px)
+    {
+        .headermenu{
+            display : flex;
+        }
+        .headrightsize{
+            width : 350px;
+        }
+    }
+    @media screen and (max-width : 1000px)
+    {
+        .headermenu{
+            display : none;
+        }
+        .headrightsize{
+            width : 200px;
+        }
+        .username{
+            display : flex;
+        }
+    }
+    @media screen and (max-width : 800px)
+    {
+        .username{
+            display : none;
+        }
+        .userbuttons{
+            display : flex;
+        }
+        .userhead{
+            margin-right : auto;
+        }
+        .headrightsize{
+            width : 100px;
+        }
+    }
+    @media screen and (max-width : 700px)
+    {
+        .userbuttons{
+            display : none;
+        }
+        .userhead{
+            margin-right : 15px;
+        }
+        .searchinput{
+            display : flex;
+        }
+    }
+    @media screen and (max-width : 460px)
+    {
+        .searchinput{
+            display : none;
+        }
+        .lalala{
+            display : none;
+        }
     }
 </style>

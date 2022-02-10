@@ -1,16 +1,17 @@
-import axios from 'axios'
+import axios from 'axios';
 
-let requests = axios.create({
-    // baseURL: ''
-    timeout: 8000
-})
+let axios_local = axios.create({
+    // baseURL: '/api',
+    timeout: 3000,
+});
 
-requests.interceptors.request.use((config) => {
-    return config
-})
+// 请求拦截器
+axios_local.interceptors.request.use((config) => {
+    return config;
+});
+// 响应拦截器
+axios_local.interceptors.response.use((response) => {
+    return response.data;
+});
 
-requests.interceptors.response.use((response) => {
-    return response
-})
-
-export default requests
+export default axios_local;

@@ -1,9 +1,11 @@
-import Vue from 'vue'
-import App from './App.vue'
-import store from '@/store'
-import router from '@/router'
+import Vue from 'vue';
+import App from './App.vue';
+import store from '@/store';
+import router from '@/router';
 
-Vue.config.productionTip = false
+import * as API from "@/api";
+
+Vue.config.productionTip = false;
 
 new Vue({
     render: h => h(App),
@@ -12,5 +14,6 @@ new Vue({
     beforeCreate()
     {
         Vue.prototype.$bus = this;
+        Vue.prototype.$API = API;
     }
 }).$mount('#app')

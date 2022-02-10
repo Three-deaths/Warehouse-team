@@ -30,7 +30,25 @@ export default new VueRouter({
         {
             path : "/login",
             component : () => {
-                return import ("@/components/login");
+                return import ("@/components/login_new");
+            },
+            meta : {
+                isheadershow : false,
+            }
+        },
+        {
+            path : "/register",
+            component : ()=>{
+                return import ("@/components/register");
+            },
+            meta : {
+                isheadershow : false,
+            }
+        },
+        {
+            path : "/foot",
+            component : ()=>{
+                return import ("@/components/foot");
             },
             meta : {
                 isheadershow : false,

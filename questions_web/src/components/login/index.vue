@@ -60,7 +60,7 @@
         align-items: center;
         margin-bottom : 20px;
         width : 250px;
-        height : 90px;
+        height : 100px;
     }
     .submitbtn{
         width: 250px;
